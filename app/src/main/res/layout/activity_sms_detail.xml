@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/messageContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SMS 내용"
+        android:background="@drawable/border"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/spamResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="분류 결과"
+        android:textSize="20sp"
+        android:textColor="#673AB7"
+        android:gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/checkButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check"
+        android:background="#03A9F4"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="40dp"/>
+</LinearLayout>
