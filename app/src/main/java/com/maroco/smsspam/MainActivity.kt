@@ -24,5 +24,10 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = titles[position]
         }.attach()
+
+        tabLayout.setTabTextColors(
+            resources.getColor(android.R.color.darker_gray, theme),
+            resources.getColor(android.R.color.white, theme)
+        )
     }
 }

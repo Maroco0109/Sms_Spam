@@ -18,7 +18,6 @@ class SmsDetailActivity : AppCompatActivity() {
         messageText.text = smsMessage
 
         checkButton.setOnClickListener {
-            // 예시: 추론 결과 표시
             resultText.text = """
                 KoBERT : SPAM (99.8%)
                 KoELECTRA : SPAM (99.7%)

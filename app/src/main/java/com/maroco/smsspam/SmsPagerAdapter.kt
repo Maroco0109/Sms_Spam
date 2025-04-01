@@ -1,10 +1,10 @@
 package com.maroco.smsspam
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class SmsPagerAdapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
+class SmsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
     override fun getItemCount() = 2
 
     override fun createFragment(position: Int): Fragment {

@@ -1,6 +1,5 @@
 package com.maroco.smsspam
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,13 +13,14 @@ import android.widget.ListView
 class SpamFragment : Fragment() {
 
     private lateinit var listView: ListView
-    private val spamList = listOf(
-        "BZ-NETMED - Sale Begins!",
-        "VM-PAYTMB - Education Pvt",
-        "AD-AIRSEP - Hellotune Subscription"
-    )
+    companion object {
+        val spamList = mutableListOf(
+            "BZ-NETMED - Sale Begins!",
+            "VM-PAYTMB - Education Pvt",
+            "AD-AIRSEP - Hellotune Subscription"
+        )
+    }
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
