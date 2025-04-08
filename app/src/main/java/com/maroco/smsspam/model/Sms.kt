@@ -1,7 +1,6 @@
-package com.maroco.smsspam.model
+package com.maroco.smsspam
 
 data class Sms(
-    val sender: String,
-    val message: String,
-    val date: String
+    val body: String,
+    val modelResults: MutableMap<String, Float> = mutableMapOf()
 )
