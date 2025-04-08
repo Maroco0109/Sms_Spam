@@ -4,7 +4,8 @@
     android:layout_height="match_parent">
 
     <ListView
-        android:id="@+id/spamListView"
+        android:id="@+id/inboxListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        />
 </FrameLayout>
