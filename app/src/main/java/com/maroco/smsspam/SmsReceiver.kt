@@ -5,27 +5,32 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Telephony
-import android.util.Log
-import android.widget.Toast
 
 class SmsReceiver : BroadcastReceiver() {
-    override fun onReceive(context: Context, intent: Intent) {
-        if (Telephony.Sms.Intents.SMS_RECEIVED_ACTION == intent.action) {
+
+    override fun onReceive(context: Context?, intent: Intent?) {
+        if (intent?.action == Telephony.Sms.Intents.SMS_RECEIVED_ACTION) {
             val bundle: Bundle? = intent.extras
-            val msgs = bundle?.get("pdus") as? Array<*>
-            val format = bundle?.getString("format")
-            msgs?.forEach {
-                val msg = Telephony.Sms.Intents.getMessagesFromIntent(intent)[0]
-                val messageBody = msg.messageBody
-                val sender = msg.originatingAddress
+            val messages = Telephony.Sms.Intents.getMessagesFromIntent(intent)
+            for (smsMessage in messages) {
+                val messageBody = smsMessage.messageBody
+                val sender = smsMessage.originatingAddress ?: "Unknown"
 
-                // 💥 여기서 간단한 스팸 기준 예시
-                if (messageBody.contains("SALE") || messageBody.contains("SUBSCRIPTION")) {
-                    SpamFragment.spamList.add("$sender : $messageBody")
-                    Toast.makeText(context, "스팸 메시지 감지됨", Toast.LENGTH_SHORT).show()
-                }
+                // 수신한 SMS 메시지 형식: "보낸이 : 내용"
+                val receivedText = "$sender : $messageBody"
 
-                Log.d("SMS_RECEIVED", "$sender : $messageBody")
+                // 하드코딩된 임시 분류 (0.1f, 0.2f, 0.15f) 설정
+                val fakeResults = hashMapOf(
+                    "KoBERT" to 0.1f,
+                    "KoELECTRA" to 0.2f,
+                    "KoRoBERTa" to 0.15f
+                )
+
+                // 여기서는 그냥 새로 Intent를 띄우는 게 아니라
+                // SpamFragment 스팸 리스트에 추가하거나 (지금은 하드코딩 기반이니 무시 가능)
+                // 새 Activity를 띄울 수도 있음
+
+                // 참고: 현재는 하드코딩 기반이라 별도 작업 필요 없음
             }
         }
     }

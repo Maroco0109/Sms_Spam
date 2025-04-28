@@ -1,36 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFF"
     android:padding="16dp">
 
+    <!-- 메시지 표시용 TextView -->
     <TextView
-        android:id="@+id/messageContent"
+        android:id="@+id/smsTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SMS 내용"
-        android:background="@drawable/border"
-        android:padding="12dp"/>
+        android:text="여기에 메시지가 표시됩니다."
+        android:textSize="18sp"
+        android:padding="8dp" />
 
-    <TextView
-        android:id="@+id/spamResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="분류 결과"
-        android:textSize="20sp"
-        android:textColor="#673AB7"
-        android:gravity="center"
-        android:layout_marginTop="30dp"/>
-
+    <!-- KoBERT 결과 버튼 -->
     <Button
-        android:id="@+id/checkButton"
+        android:id="@+id/btnKoBERT"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check"
-        android:background="#03A9F4"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="40dp"/>
+        android:text="KoBERT 결과 보기" />
+
+    <!-- KoELECTRA 결과 버튼 -->
+    <Button
+        android:id="@+id/btnKoELECTRA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="KoELECTRA 결과 보기" />
+
+    <!-- KoRoBERTa 결과 버튼 -->
+    <Button
+        android:id="@+id/btnKoRoBERTa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="KoRoBERTa 결과 보기" />
+
 </LinearLayout>
